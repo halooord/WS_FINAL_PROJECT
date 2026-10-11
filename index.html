@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="form-container">
+        <header class="form-header">
+            <h1>Student Registration</h1>
+            <p>Please complete all required fields to register.</p>
+        </header>
+
+        <form id="registrationForm" novalidate>
+            <div class="form-group">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" name="studentId"
+                       placeholder="e.g. 2026-0001" autocomplete="off"
+                       aria-describedby="studentIdError">
+                <small class="error-message" id="studentIdError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName"
+                       placeholder="Enter your full name" autocomplete="name"
+                       aria-describedby="fullNameError">
+                <small class="error-message" id="fullNameError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email"
+                       placeholder="name@example.com" autocomplete="email"
+                       aria-describedby="emailError">
+                <small class="error-message" id="emailError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="09XXXXXXXXX" inputmode="numeric"
+                       data-phone-format="philippines-mobile"
+                       aria-describedby="phoneError">
+                <small class="error-message" id="phoneError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob"
+                       data-date-rule="past-or-today"
+                       aria-describedby="dobError">
+                <small class="error-message" id="dobError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" aria-describedby="genderError">
+                    <option value="">Select gender</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+                <small class="error-message" id="genderError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="program">Program</label>
+                <select id="program" name="program" aria-describedby="programError">
+                    <option value="">Select program</option>
+                    <option value="BSIT">Bachelor of Science in Information Technology (BSIT)</option>
+                    <option value="BSCS">Bachelor of Science in Computer Science (BSCS)</option>
+                    <option value="BSBA">Bachelor of Science in Business Administration (BSBA)</option>
+                    <option value="BSED">Bachelor of Secondary Education (BSED)</option>
+                    <option value="BEED">Bachelor of Elementary Education (BEED)</option>
+                    <option value="Other">Other</option>
+                </select>
+                <small class="error-message" id="programError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="yearLevel">Year Level</label>
+                <select id="yearLevel" name="yearLevel" aria-describedby="yearLevelError">
+                    <option value="">Select year level</option>
+                    <option value="1st Year">1st Year</option>
+                    <option value="2nd Year">2nd Year</option>
+                    <option value="3rd Year">3rd Year</option>
+                    <option value="4th Year">4th Year</option>
+                    <option value="5th Year">5th Year</option>
+                </select>
+                <small class="error-message" id="yearLevelError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"
+                       placeholder="At least 8 characters"
+                       data-min-length="8" autocomplete="new-password"
+                       aria-describedby="passwordError">
+                <small class="error-message" id="passwordError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword"
+                       placeholder="Re-enter your password"
+                       autocomplete="new-password"
+                       aria-describedby="confirmPasswordError">
+                <small class="error-message" id="confirmPasswordError"></small>
+            </div>
+
+            <button type="button" id="togglePassword" class="toggle-password"
+                    aria-pressed="false">Show Passwords</button>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3"
+                          placeholder="House number, street, barangay, city"
+                          autocomplete="street-address"
+                          aria-describedby="addressError"></textarea>
+                <small class="error-message" id="addressError"></small>
+            </div>
+
+            <div class="form-group agreement-group">
+                <label class="checkbox-label" for="agreement">
+                    <input type="checkbox" id="agreement" name="agreement">
+                    I confirm that the information I provided is correct.
+                </label>
+                <small class="error-message" id="agreementError"></small>
+            </div>
+
+            <p id="successMessage" class="success-message" role="status"
+               aria-live="polite"></p>
+
+            <div class="button-group">
+                <button type="submit" id="submitButton">Register</button>
+                <button type="reset" id="resetButton" class="reset-button">Reset</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
